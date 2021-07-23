@@ -60,7 +60,7 @@ spec:
       steps {
         container('docker') {
         
-          sh"docker build -t  ${IMAGE_TAG} ."
+           sh "PYTHONUNBUFFERED=1 gcloud builds submit -t ${IMAGE_TAG} ."
         }
       }
     }
