@@ -51,7 +51,7 @@ spec:
                         projectId: "iamotis",
                         clusterName: "jenkins-cd",
                         zone: "us-east1-d",
-                        manifestPattern: 'k8s/jenkins-cd/',
+                    
                         credentialsId: "iamotis",
                         verifyDeployments: true])
             }
