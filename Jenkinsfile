@@ -1,3 +1,4 @@
+
 pipeline {
 
   environment {
@@ -43,6 +44,18 @@ spec:
 }
   }
   stages {
+    stage('dget-credential') {
+            steps{
+                
+                step([$class: 'KubernetesEngineBuilder', 
+                        projectId: "iamotis",
+                        clusterName: "jenkins-cd",
+                        zone: "us-east1-d",
+                        manifestPattern: 'k8s/jenkins-cd/',
+                        credentialsId: "iamotis",
+                        verifyDeployments: true])
+            }
+        }
     stage('Test') {
       steps {
         container('golang') {
