@@ -44,15 +44,7 @@ spec:
 }
   }
   stages {
-    stage('get-credential') {
-            steps{
-                
-            
-               
-                echo" do nothing"
-     
-            }
-        }
+    
     stage('Test') {
       steps {
         container('golang') {
