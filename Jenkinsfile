@@ -44,16 +44,10 @@ spec:
 }
   }
   stages {
-    stage('dget-credential') {
+    stage('get-credential') {
             steps{
                 
-                step([$class: 'KubernetesEngineBuilder', 
-                        projectId: "iamotis",
-                        clusterName: "jenkins-cd",
-                        zone: "us-east1-d",
-                    
-                        credentialsId: "iamotis",
-                        verifyDeployments: true])
+               sh 'gcloud container clusters get-credentials jenkins-cd --zone us-east1-d --project iamotis'
             }
         }
     stage('Test') {
