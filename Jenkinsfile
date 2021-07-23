@@ -15,7 +15,7 @@ pipeline {
     kubernetes {
       label 'sample-app'
       defaultContainer 'jnlp'
-      yaml 
+      yaml """
 apiVersion: v1
 kind: Pod
 metadata:
@@ -40,7 +40,7 @@ spec:
     command:
     - cat
     tty: true
-
+"""
 }
   }
   stages {
