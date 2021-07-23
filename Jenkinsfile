@@ -49,7 +49,7 @@ spec:
                 
             
                
-                sh("gcloud container clusters get-credentials jenkins-cd --zone us-east1-d --project iamotis")
+                echo" do nothing"
      
             }
         }
