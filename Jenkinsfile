@@ -48,7 +48,7 @@ spec:
             steps{
                 
               withCredentials([file(credentialsId: 'key-sa', variable: 'GC_KEY')]) {
-                sh("gcloud auth activate-service-account --key-file=${GC_KEY}")
+               
                 sh("gcloud container clusters get-credentials jenkins-cd --zone us-east1-d --project iamotis")
               }
             }
